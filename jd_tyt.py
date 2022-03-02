@@ -4,7 +4,7 @@
 项目名称: JdScript / jd_tyt
 活动名称: 推推赚大钱
 Author: SheYu09
-cron: 0 0 * * * jd_tyt.py
+cron: 1 0 * * * jd_tyt.py
 new Env('极速版 -*- 推一推')
 '''
 import requests, os
