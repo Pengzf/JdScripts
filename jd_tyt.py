@@ -103,7 +103,7 @@ def helpCoinDozer():
 	s.params['body'] = dumps(body)
 	s.params['t'] = int(time()*1000)
 	s.params['_stk'] = 'appid,body,client,clientVersion,functionId,t'
-	s.params['h5st'] = h5st('10005')
+	s.params['h5st'] = h5st(s.params, '10005')
 	s.params['appid'] = 'station-soa-h5'
 	helpCoin = JD_API_HOST()
 
