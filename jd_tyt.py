@@ -144,7 +144,6 @@ def start():
 		if not packetId:
 			print(f"【京东账号{ckNum+1}（{nickName}）】获取互助码失败。请稍后再试！\n")
 			continue
-		print(f"【用户将要助力的好友互助码】\n{packetIdList}\n")
 		jdcoupon()
 
 if __name__ == '__main__':
