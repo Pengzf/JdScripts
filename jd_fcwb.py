@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*
 '''
-项目名称: JD-Script / jd_tyt
+项目名称: JD-Script / jd_fcwb
 活动名称: 发财挖宝
 Author: SheYu09
-cron: 0 0 * * * jd_tyt.py
+cron: 0 0 * * * jd_fcwb.py
 new Env('极速版 -*- 发财挖宝')
 '''
 import requests
@@ -146,10 +146,10 @@ def DigTreasure(i):
 
 def start():
 	global ckList, inviterList, inviteCodeList, personNumList; print("🔔发财挖宝, 开始!\n"); inviterList, inviteCodeList, personNumList = list(), list(), list(); ckList = jdCookie(); 
-	'''[BoostCode(c) for c in [c for c in ckList if re_pin(c) in Name()]]
+	[BoostCode(c) for c in [c for c in ckList if re_pin(c) in Name()]]
 	inviterList and inviteCodeList and [HelpFriends(c) for c in ckList]
 	print(inviterList, personNumList)
-	inviterList and inviteCodeList and [HelpFriends(c) for c in ckList]'''
+	inviterList and inviteCodeList and [HelpFriends(c) for c in ckList]
 	[DigTreasure(c) for c in [c for c in ckList if re_pin(c) in Name()]]
 
 if __name__ == '__main__':
