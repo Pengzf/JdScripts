@@ -117,7 +117,7 @@ def HelpFriends(i):
 		if errMsg == 'success':
 			personNumList[0] += 1
 			print(f"邀请人数: {personNum+1}\n")
-		sleep(2); break
+		sleep(6); break
 
 def DigTreasure(i):
 	s.headers['Cookie'] = i; ck, levelName, nickName, userLevel = GetJDUser(s)
