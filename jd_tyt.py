@@ -14,6 +14,7 @@ try:
 	from h5st import h5st
 except:
 	os.system(f'wget {SheYu09}h5st.so')
+from jdCookie import *
 from re import compile
 from inspect import stack
 from time import sleep, time
