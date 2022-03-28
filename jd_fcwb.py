@@ -24,6 +24,7 @@ try:
 	from GetJDUser import GetJDUser
 except:
 	os.system(f'wget {SheYu09}GetJDUser.so')
+from USER_AGENTS import userAgent
 requests.packages.urllib3.disable_warnings()
 s.params = {
 	'functionId': '',
@@ -102,11 +103,10 @@ def happyDigHelp(inviter, inviteCode):
 	DigHelpinfo = JD_API_HOST()
 
 def BoostCode(i):
-	global body
 	s.headers['Cookie'] = i; ck, levelName, nickName, userLevel = GetJDUser(s)
 	if not ck: return
 	s.headers['Cookie'] = ck; 
-	print(f"开始【京东账号{ckList.index(i)+1}】{userLevel}级 {levelName}: {nickName}\n"); JD_API_BODY(); happyDigHome(); DigTreasure(ck); happyDigHelpList(); inviter = re_key('"markedPin":"(.*?)"', DigHomeinfo); inviteCode = re_key('"inviteCode":"(.*?)"', DigHomeinfo); personNum = int(re_key('"personNum":(.*?),', DigHelpListinfo)); inviterList.append(inviter); inviteCodeList.append(inviteCode); personNumList.append(personNum)
+	print(f"开始【京东账号{ckList.index(i)+1}】{userLevel}级 {levelName}: {nickName}\n"); JD_API_BODY(); happyDigHome(); DigTreasure(i); happyDigHelpList(); inviter = re_key('"markedPin":"(.*?)"', DigHomeinfo); inviteCode = re_key('"inviteCode":"(.*?)"', DigHomeinfo); personNum = int(re_key('"personNum":(.*?),', DigHelpListinfo)); inviterList.append(inviter); inviteCodeList.append(inviteCode); personNumList.append(personNum)
 	print(f"inviter: {inviter}\ninviteCode: {inviteCode}\n邀请人数: {personNum}\n")
 
 def HelpFriends(i):
@@ -123,7 +123,8 @@ def HelpFriends(i):
 def DigTreasure(i):
 	s.headers['Cookie'] = i; ck, levelName, nickName, userLevel = GetJDUser(s)
 	if not ck: return
-	s.headers['Cookie'] = ck; print(f"开始挖宝【京东账号{ckList.index(i)+1}】{userLevel}级 {levelName}: {nickName}\n")
+	s.headers['Cookie'] = ck
+	print(f"开始挖宝【京东账号{ckList.index(i)+1}】{userLevel}级 {levelName}: {nickName}\n")
 	break_info = False
 	for round in range(3):
 		JD_API_BODY()
@@ -142,8 +143,7 @@ def DigTreasure(i):
 			type = type == '1' and '优惠卷' or type == '2' and '京东红包' or type == '3' and '微信红包' or type == '4' and '炸弹'
 			print(f"挖到{type}: {value}\n")
 			sleep(3)
-		if break_info:
-			break
+		if break_info: break
 
 def start():
 	global ckList, inviterList, inviteCodeList, personNumList; print("🔔发财挖宝, 开始!\n"); inviterList, inviteCodeList, personNumList = list(), list(), list(); ckList = jdCookie(); 
