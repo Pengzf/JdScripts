@@ -7,4 +7,4 @@
  - 多个助力账号使用&隔开
  - 列：export Name="jd_***&jd_xxx&123"
 
-## ql repo https://gh.fakev.cn/SheYu09/JdScripts.git "" "" "" ""
+## ql repo https://gh.fakev.cn/SheYu09/JdScripts.git "" "jdCookie|USER_AGENTS" "jdCookie|USER_AGENTS" ""
