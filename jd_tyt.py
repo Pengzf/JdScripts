@@ -89,7 +89,7 @@ def HelpFriends(i):
 
 def start():
 	global Names, ckList, packetIdList; print("🔔推推赚大钱, 开始!\n"); packetIdList = list(); Names = Name(); ckList = jdCookie(); s.t = 10
-	[BoostCode(c) for c in [c for c in ckList if re_pin(c) in Name()]]
+	[BoostCode(c) for c in [c for c in ckList if re_pin(c) in Names]]
 	packetIdList and [HelpFriends(c) for c in ckList]
 
 if __name__ == '__main__':
