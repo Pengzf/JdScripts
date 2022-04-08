@@ -84,7 +84,7 @@ def HelpFriends(i):
 	msg = re_key('"msg":"(.*?)"', helpCoin)
 	amount = re_key('"amount":"(.*?)"', helpCoin) if msg == 'OK' else ''
 	print(msg, amount, "\n")
-	if packetIdList.pop(0) if msg in ['已完成砍价', '排队帮砍'] else pop_ck() if len(packetIdList) == 1 else '': return
+	if packetIdList.pop(0) if msg in ['已完成砍价', '排队帮砍'] and len(packetIdList) != 1 else pop_ck() if msg in ['已完成砍价', '排队帮砍'] and len(packetIdList) == 1 else '': sleep(s.t); return
 	sleep(s.t)
 
 def start():
