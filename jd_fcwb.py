@@ -15,7 +15,7 @@ except: os.system(f'wget {SheYu09}GetJDUser.so')
 requests.packages.urllib3.disable_warnings()
 
 def pop_ck():
-	while len(Names) >= len(ckList): ckList.pop()
+	while len(Names)+1 <= len(ckList): ckList.pop()
 	return True
 
 def JD_API_PARAMS():
