@@ -128,7 +128,7 @@ def Redenvelopes(i):
 	msg = re_key('"msg":(.*?),', h5activity)
 	if '限制' in msg: print("已达拆红包数量限制\n"); return
 	for i in range(8):
-		h5receiveRedpacketAll(''); biz_msg = re_key('"biz_msg":"(.*?)"', h5receive); sleep(1)
+		h5receiveRedpacketAll(''); biz_msg = re_key('"biz_msg":"(.*?)"', h5receive); sleep(s.t)
 		try: 
 			if '次数已用光' in biz_msg or '还未发起' in biz_msg: print(biz_msg, "\n"); break
 			discount = re_key('"discount":"(.*?)"', h5receive); print(f"{biz_msg}: {discount}元\n")
@@ -151,7 +151,7 @@ def start():
 	ckList = jdCookie(); redPacketIdList = list(); s.name = split('[_.]', os.path.basename(__file__)); s.t = 60
 	[BoostCode(i) for i in [i for i in ckList if re_pin(i) in Names]]
 	redPacketIdList and [jdkoi(i) for i in ckList]
-	[Redenvelopes(i) for i in ckList]
+	[Redenvelopes(i) for i in [i for i in ckList if re_pin(i) in Names]]
 
 if __name__ == '__main__':
 	start()
