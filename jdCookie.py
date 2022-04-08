@@ -6,9 +6,9 @@
 Author: SheYu09
 '''
 from os import environ
-from re import compile
 from inspect import stack
-from time import strftime, localtime
+from re import compile, findall, split
+from time import time, sleep, localtime, strftime
 
 def Name():
 	try:
@@ -20,17 +20,13 @@ def Name():
 		print("自行添加环境变量：Name, 不同好友中间用&符号隔开\n")
 		exit()
 
-def re_key(r, e):
-	try:
-		return compile(rf'{r}').findall(e)
-	except:
-		pass
-
 def re_pin(r):
-	try:
-		return compile(r'pt_key=.*?;pt_pin=(.*?);').findall(r)[0]
-	except:
-		pass
+	try: return compile(r'pin=(.*?);wskey=.*?;').findall(r)[0] if 'wskey=' in r else compile(r'pt_key=.*?;pt_pin=(.*?);').findall(r)[0]
+	except: print(r, '\nck格式不正确，请检查\n')
+
+def re_key(r, e):
+	try: return compile(rf'{r}').findall(e) if 'pin=' in r else compile(rf'{r}').findall(e)[0]
+	except: pass
 
 def JD_API_HOST(C):
 	try:
