@@ -80,7 +80,7 @@ def BoostCode(i):
 
 def HelpFriends(i):
 	inviter, inviteCode, personNum = inviterList[0], inviteCodeList[0], personNumList[0]
-	if [inviterList.remove(inviter), inviteCodeList.remove(inviteCode), personNumList.pop(0)][2] if personNum >= 40 and len(inviteCodeList) != 1 else pop_ck() if len(inviteCodeList) == 1 else '': return
+	if [inviterList.remove(inviter), inviteCodeList.remove(inviteCode), personNumList.pop(0)][2] if personNum >= 40 and len(inviteCodeList) != 1 else pop_ck() if personNum >= 40 and len(inviteCodeList) == 1 else '': return
 	s.headers['Cookie'] = i
 	if GetJDUser(): return
 	print(f"【用户{ckList.index(i)+1}（{s.nickName}）助力】{inviter}\n"); happyDigHelp(inviter, inviteCode); errMsg = re_key('"errMsg":"(.*?)"', DigHelpinfo); print(errMsg, "\n")
