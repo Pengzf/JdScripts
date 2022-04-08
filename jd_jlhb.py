@@ -9,7 +9,7 @@ new Env('京东 -*- 锦鲤红包')
 '''
 import requests, os
 s = requests.session()
-SheYu09 = 'https://raw.fastgit.org/SheYu09/JdScripts/main/'
+SheYu09 = 'https://raw.gh.fakev.cn/SheYu09/JdScripts/main/'
 try: from GetJDUser import *
 except: os.system(f'wget {SheYu09}GetJDUser.so')
 requests.packages.urllib3.disable_warnings()

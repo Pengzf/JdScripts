@@ -9,7 +9,7 @@ new Env('极速版 -*- 推一推')
 '''
 import requests, os
 s = requests.session()
-SheYu09 = 'https://raw.fastgit.org/SheYu09/JdScripts/main/'
+SheYu09 = 'https://raw.gh.fakev.cn/SheYu09/JdScripts/main/'
 try:
 	from GetJDUser import *
 except:
